@@ -1,5 +1,5 @@
 :root{
-  --bg:#fff;
+  --bg:#E1DCD1;
   --fg:#0b0b0b;
   --accent:#c72;
   --container-width:1100px;
@@ -18,7 +18,7 @@ body{color:var(--fg);background:var(--bg);line-height:1.5}
 .site-title{font-size:2.25rem;letter-spacing:0.06em;margin:0;text-transform:uppercase}
 .site-sub{margin:0.5rem 0 1rem;color:#444;font-weight:500}
 .site-nav{display:flex;gap:1rem;align-items:center}
-.site-nav button{background:#000;color:#fff;border:none;padding:0.5rem 0.75rem;border-radius:4px;cursor:pointer}
+.site-nav button{background:#000;color:#E1DCD1;border:none;padding:0.5rem 0.75rem;border-radius:4px;cursor:pointer}
 #timeline{min-height:60vh}
 .slide{padding:4rem 0;border-bottom:1px solid #f3f3f3}
 .slide h2{font-size:1.5rem;margin:0 0 0.5rem;text-transform:uppercase}
@@ -32,7 +32,7 @@ body{color:var(--fg);background:var(--bg);line-height:1.5}
 }
 
 /* refined visual style to better match original Figma layout */
-body{background:#fff;color:#0b0b0b}
+body{background:#E1DCD1;color:#0b0b0b}
 .header-grid{display:flex;justify-content:space-between;align-items:center;gap:1rem}
 .site-sub{font-size:1.25rem;letter-spacing:0.08em;margin:0}
 .process-line{font-weight:600;color:#222;margin:0 0 0.5rem}
