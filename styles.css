@@ -1,0 +1,85 @@
+:root{
+  --bg:#fff;
+  --fg:#0b0b0b;
+  --accent:#c72;
+  --container-width:1100px;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+/* disable native scroll, we use a virtual transform-based scroller for buttery smoothness */
+html,body{height:100%}
+
+/* When JS enables virtual scrolling, this class is applied to disable native scroll */
+html.use-virtual-scroll, body.use-virtual-scroll{overflow:hidden}
+body{color:var(--fg);background:var(--bg);line-height:1.5}
+.container{max-width:var(--container-width);margin:0 auto;padding:2rem}
+.site-header{padding-top:2rem;padding-bottom:2rem;border-bottom:1px solid #eee}
+.site-title{font-size:2.25rem;letter-spacing:0.06em;margin:0;text-transform:uppercase}
+.site-sub{margin:0.5rem 0 1rem;color:#444;font-weight:500}
+.site-nav{display:flex;gap:1rem;align-items:center}
+.site-nav button{background:#000;color:#fff;border:none;padding:0.5rem 0.75rem;border-radius:4px;cursor:pointer}
+#timeline{min-height:60vh}
+.slide{padding:4rem 0;border-bottom:1px solid #f3f3f3}
+.slide h2{font-size:1.5rem;margin:0 0 0.5rem;text-transform:uppercase}
+.slide h3{margin:0 0 0.75rem;color:#666;font-weight:600}
+.slide p{max-width:54ch;color:#222}
+.site-footer{padding:2rem 0;border-top:1px solid #eee;color:#666}
+
+@media (min-width:900px){
+  .site-title{font-size:3.5rem}
+  .slide h2{font-size:2rem}
+}
+
+/* refined visual style to better match original Figma layout */
+body{background:#fff;color:#0b0b0b}
+.header-grid{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.site-sub{font-size:1.25rem;letter-spacing:0.08em;margin:0}
+.process-line{font-weight:600;color:#222;margin:0 0 0.5rem}
+.hero{font-size:0.9rem;letter-spacing:0.12em;text-transform:uppercase;color:#666;margin-bottom:.5rem}
+.hero-large{font-size:3rem;letter-spacing:0.08em;margin:0 0 0.75rem}
+.lead{font-size:1.125rem;max-width:70ch}
+.media-placeholder{height:180px;background:#efefef;border:1px dashed #ddd;display:flex;align-items:center;justify-content:center;color:#777;margin-top:1rem}
+
+.slide-media{width:100%;max-height:420px;object-fit:cover;border-radius:2px;margin-top:1rem}
+
+.parallax{will-change:transform}
+.site-header, .slide{overflow:visible}
+
+/* slide transitions */
+.timeline-wrapper{will-change:transform}
+.timeline-wrapper{transform:translateZ(0);backface-visibility:hidden}
+
+/* accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  html,body{overflow:auto}
+  .timeline-wrapper{transform:none !important}
+  .slide{transition:none}
+}
+
+
+.no-js .slide{opacity:1;transform:none}
+.no-js .timeline-wrapper{transform:none}
+.slide{opacity:0;transform:translateY(12px);transition:opacity .45s ease, transform .45s ease;display:block;min-height:100vh;padding:6rem 0}
+.slide.active{opacity:1;transform:none}
+
+/* No reveal animations: make text visible by default (slides themselves control visibility) */
+.slide h2, .slide h3, .slide p, .lead, .hero-large{
+  opacity:1;
+  transform:none;
+  transition:none;
+}
+
+/* responsive tweaks */
+@media (min-width:900px){
+  .container{padding:3rem}
+  .hero-large{font-size:4.25rem}
+  .lead{font-size:1.25rem}
+}
+
+/* small screens */
+@media (max-width:600px){
+  .site-title{font-size:1.25rem}
+  .hero-large{font-size:2rem}
+  .header-grid{flex-direction:column;align-items:flex-start}
+}
